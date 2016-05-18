@@ -1,16 +1,21 @@
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme Spacedust
+colorscheme darkmate
+
+:command Outdoor :set background=light | :colorscheme hemisu
 
 hi Normal ctermbg=NONE
 
-"set guifont=FuraMonoForPowerline\ Nerd\ Font\ Medium\ 12
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+set guifont=FuraMonoForPowerline\ Nerd\ Font\ Medium\ 12
 
 set encoding=utf-8
 scriptencoding utf-8
 
-"autocmd! FileType c,cpp,java call CSyntaxAfter()
+autocmd! FileType c,cpp,java call CSyntaxAfter()
 
 set autochdir
 
@@ -26,7 +31,7 @@ set number
 
 set ruler
 
-" syntax on
+"syntax on
 
 set hlsearch
 
@@ -67,8 +72,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"highlight clear SignColumn
-"highlight LineNr guibg=NONE
+highlight clear SignColumn
+highlight LineNr guibg=NONE
 
 set mouse=a
 
@@ -122,6 +127,7 @@ Plugin 'freeo/vim-kalisi'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'chriskempson/base16-vim'
+Plugin 'yearofmoo/Vim-Darkmate'
 
 " Git
 Plugin 'tpope/vim-git'
@@ -168,6 +174,27 @@ Plugin 'dragfire/Improved-Syntax-Highlighting-Vim'
 Plugin 'rudes/vim-java'
 Plugin 'artur-shaik/vim-javacomplete2'
 
+" Javascript
+"Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'maksimr/vim-jsbeautify'
+Plugin 'pangloss/vim-javascript'
+Plugin '1995eaton/vim-better-javascript-completion'
+Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'ternjs/tern_for_vim'
+
+" Less
+Plugin 'groenewege/vim-less'
+
+" JSON
+Plugin 'elzr/vim-json'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+
+" Coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
 " Markdown 
 "Plugin 'suan/vim-instant-markdown'
 "Plugin 'gabrielelana/vim-markdown'
@@ -191,7 +218,6 @@ Plugin 'mattn/webapi-vim'
 call vundle#end()
 
 let g:EclimCompletionMethod = 'omnifunc'
-let g:EclimLogLevel = 'trace'
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UtilSnipsForwardTrigger="<c-j>"
@@ -218,6 +244,8 @@ let g:tabgar_width = 30
 let g:tagbar_left = 0
 
 let g:delimitMate_jump_expansion = 1
+
+let g:javascript_enable_domhtmlcss = 1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

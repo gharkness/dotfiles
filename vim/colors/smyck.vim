@@ -69,6 +69,24 @@ hi Symbol               cterm=none ctermbg=none ctermfg=9           gui=none    
 hi Method               cterm=none ctermbg=none ctermfg=15          gui=none        guifg=#F7F7F7
 hi Interpolation        cterm=none ctermbg=none ctermfg=6           gui=none        guifg=#2EB5C1
 
+" Java
+hi link javaNumber              Number  
+hi link javaString              String 
+hi link javaTypeDef             Type
+hi link javaExternal            Special
+hi link javaMethodDef           Method
+hi link javaClassDecl           Structure
+hi link javaScopeDecl           Special
+hi link javaStorageClass        Type
+hi link javaBoolean             Number
+hi link javaClasses             Identifier
+hi link javaAnnotation          Interpolation
+hi link javaConstant            Constant
+hi link javaDocComment          Comment
+hi link javaDocParam            Symbol
+hi link javaTodo                Special
+hi link javaType                Type
+
 " Erlang
 hi link erlangAtom            Keyword
 hi link erlangBitType         Keyword

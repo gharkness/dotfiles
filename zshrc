@@ -7,7 +7,7 @@ export ZSH=/Users/gharkness/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gitster"
+ZSH_THEME="lambda-mod"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -29,7 +29,7 @@ ZSH_THEME="gitster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -51,13 +51,13 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux tmuxinator colorize github zsh-syntax-highlighting)
+plugins=(git tmux tmuxinator colorize github zsh-syntax-highlighting virtualenv)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:~/scripts"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:~/scripts:~/dotfiles/dasht-2.0.0/bin:~/bin:~/Library/Haskell/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
-
+# :/Library/Frameworks/Python.framework/Versions/3.5/bin:
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -84,3 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
+alias pushit="~/bin/pushit.sh"
+
+export JUNIT_HOME="$HOME/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar:$JUNIT_HOME/gs-algo-1.3.jar:$JUNIT_HOME/gs-core-1.3.jar:$JUNIT_HOME/gs-ui-1.3.jar"
+

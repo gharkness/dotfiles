@@ -117,6 +117,24 @@ hi! link javaScript        Normal
 hi! link javaScriptBraces  Delimiter
 
 "}}}
+" Java {{{
+hi javaTypeDef                ctermfg=118 
+hi javaExternal               ctermfg=33
+hi javaMethodDef              ctermfg=118
+hi javaClassDecl              ctermfg=124
+hi javaScopeDecl              ctermfg=98
+hi javaStorageClass           ctermfg=33
+hi javaBoolean                ctermfg=45
+hi javaClasses                ctermfg=39
+hi javaAnnotation             ctermfg=124
+hi javaConstant               ctermfg=124
+hi javaDocComment             ctermfg=8
+hi javaDocParam               ctermfg=45
+hi javaTodo                   ctermfg=201
+hi javaNumber                 ctermfg=118
+hi javaString                 ctermfg=118
+hi javaType                   ctermfg=124
+" }}}
 " PHP {{{
 hi phpSpecialFunction    ctermfg=5
 hi phpIdentifier         ctermfg=11

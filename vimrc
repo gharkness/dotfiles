@@ -1,7 +1,24 @@
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme darkmate
+set
+
+if has('gui_running')
+"   colorscheme lucario
+"   colors Spacedust
+    colorscheme kalisi
+    set guioptions=egirLt
+    set guioptions-=a
+    set guioptions-=r
+    set guioptions-=l
+else 
+"    colorscheme lucario
+"    colorscheme kalisi
+"    colorscheme desertink
+    colorscheme desert256
+endif
+
+set guifont=Roboto\ Mono\ For\ Powerline\ Regular:h14
 
 :command Outdoor :set background=light | :colorscheme hemisu
 
@@ -9,8 +26,6 @@ hi Normal ctermbg=NONE
 
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
-
-set guifont=FuraMonoForPowerline\ Nerd\ Font\ Medium\ 12
 
 set encoding=utf-8
 scriptencoding utf-8
@@ -22,7 +37,8 @@ set autochdir
 set smartindent
 set smarttab
 
-set nocompatible
+"set nocompatible
+
 set hidden
 
 set noswapfile
@@ -31,7 +47,7 @@ set number
 
 set ruler
 
-"syntax on
+syntax on
 
 set hlsearch
 
@@ -121,13 +137,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colors
-Plugin 'jdkanani/vim-material-theme'
-Plugin 'Wutzara/vim-materialtheme'
 Plugin 'freeo/vim-kalisi'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'chriskempson/base16-vim'
-Plugin 'yearofmoo/Vim-Darkmate'
 
 " Git
 Plugin 'tpope/vim-git'
@@ -137,8 +147,8 @@ Plugin 'airblade/vim-gitgutter'
 
 " Add IDE-like Functionality
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
@@ -169,51 +179,71 @@ Plugin 'benmills/vimux'
 " Syntax and Highlighting
 Plugin 'vim-scripts/cSyntaxAfter'
 Plugin 'dragfire/Improved-Syntax-Highlighting-Vim'
+Plugin 'toupeira/vim-desertink'
 
 " Java
-Plugin 'rudes/vim-java'
-Plugin 'artur-shaik/vim-javacomplete2'
+"Plugin 'rudes/vim-java'
+"Plugin 'artur-shaik/vim-javacomplete2'
 
 " Javascript
 "Plugin 'othree/yajs.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'othree/javascript-libraries-syntax.vim'
 "Plugin 'maksimr/vim-jsbeautify'
-Plugin 'pangloss/vim-javascript'
-Plugin '1995eaton/vim-better-javascript-completion'
-Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'pangloss/vim-javascript'
+"Plugin '1995eaton/vim-better-javascript-completion'
+"Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'ternjs/tern_for_vim'
 
 " Less
-Plugin 'groenewege/vim-less'
+"Plugin 'groenewege/vim-less'
 
 " JSON
-Plugin 'elzr/vim-json'
+"Plugin 'elzr/vim-json'
 
 " Typescript
-Plugin 'leafgarland/typescript-vim'
+"Plugin 'leafgarland/typescript-vim'
 
 " Coffeescript
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
+
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
 
 " Markdown 
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'gabrielelana/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'gabrielelana/vim-markdown'
 
 "Latex
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Langauges
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'derekwyatt/vim-scala'
 "Plugin 'faith/vim-go'
 
+Plugin 'ktvoelker/sbt-vim'
+
 " Web API
-Plugin 'mattn/webapi-vim'
+"Plugin 'mattn/webapi-vim'
 
 " Distraction Free
 "Plugin 'junegunn/goyo.vim'
 
 " Misc
 "Plugin 'xolox/vim-misc'
+
+" Documentation
+Plugin 'sunaku/dasht'
+
+" Intellij Completion
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'vhakulinen/neovim-intellij-complete-deoplete'
+"Plugin 'fdinoff/neovim-java-client'
+
+" NeoVim Specific
+if has('nvim')
+    Plugin 'kassio/neoterm'
+endif
 
 call vundle#end()
 
@@ -263,6 +293,8 @@ map <space>k <Plug>(easymotion-k)
 map <space>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0
+
+let g:NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
 function! ToggleNERDTreeAndTagbar()
 	let w:jumpbacktohere = 1
